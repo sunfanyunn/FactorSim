@@ -1,7 +1,9 @@
 # FactorSim
 
 ### Environment Usage
-To play the PLE environments, 
+
+To export video trajectory of a policy, run 
+`python -m utils.export_video pong`
 
 ## Acknowledgement
 

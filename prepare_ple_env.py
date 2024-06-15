@@ -156,8 +156,8 @@ def ple_env_creator(config):
 
 if __name__ == "__main__":
     from ray.rllib.utils import check_env
-    import os
-    os.environ["SDL_VIDEODRIVER"] = "dummy"
+    #import os
+    #os.environ["SDL_VIDEODRIVER"] = "dummy"
     #for env_name in ["snake", "pong", "waterworld", "snake"]:
     NUM_TRIALS = 10
     game_name = sys.argv[1]
@@ -166,7 +166,7 @@ if __name__ == "__main__":
         env_config = {"name": env_name}
         env = ple_env_creator(env_config) 
         check_env(env)
-        print(f"{env_name} passed")
+        print(f"{env_name} env check passed.")
         print(env.p.getActionSet())
 
         episode_rewards = []
