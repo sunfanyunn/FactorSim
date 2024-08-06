@@ -210,7 +210,7 @@ class GameRep:
             json.dump(json_content, f, indent=4)
 
     def ask_llm(self, query):
-        print('ask_llm ...')
+        print(f'ask_llm ... ')
         self.num_tokens += num_tokens_from_string(query)
         self.num_api_calls += 1
         if "gpt" in self.model:
@@ -368,7 +368,7 @@ class GameRep:
             # get the values of the dict contextual_states
             all_code = ""
             try:
-                yield "state_change & decomposition prompt ..."
+                yield "context selection prompt ..."
                 contextual_states = self.state_change(query)
                 actions = self.decompose_query(query, contextual_states)
                 assert all(key in actions.keys() for key in ["input_logic", "state_transition", "ui_rendering"])
@@ -590,7 +590,6 @@ class GameRep:
             return new_functions
 
     def logic_add(self, function_name, function_description, relevant_states=None):
-
         existing_implementation = ""
         for function in self.logics:
             if (relevant_states and function.is_relevant(relevant_states)):
