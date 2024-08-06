@@ -4,11 +4,16 @@
 Refer to the README under the directory `factorsim`.
 ```
 $ cd factorsim
-$ ./go.sh
+$ ./go.sh GAME_NAME
 ```
 
 ### Zero-shot transfer experiment
-TODO
+To train RL policies on the generated environments, run
+# TODO
+
+To train RL policies on the ``ground-truth'' PLE environments, run 
+`./rl_train.sh pong ppo gt --train_on_ple`
+
 
 ### Miscalleneous
 To export video trajectory of a policy, run 

@@ -19,9 +19,10 @@ export OPENAI_API_KEY=$(cat ~/api.key)
 ```
 python main.py GAME_NAME LLM_MODEL
 ```
+- `GAME_NAME` could be 
+- `LLM_MODEL` could be `gpt-4-1106-preview`, `gpt-3.5-turbo-1106` or `llama3`
 
 A sample command can be found in `go.sh`
 
-`LLM_MODEL` could be `gpt-4-1106-preview`, `gpt-3.5-turbo-1106` or `llama3`
 
 
