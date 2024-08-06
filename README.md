@@ -1,7 +1,11 @@
 # FactorSim
 
-### Environment Generation
-Refer to the README under the directory `factorsim`
+### Simulation Generation
+Refer to the README under the directory `factorsim`.
+```
+$ cd factorsim
+$ ./go.sh
+```
 
 ### Zero-shot transfer experiment
 TODO
