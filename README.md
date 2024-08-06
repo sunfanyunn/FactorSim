@@ -9,11 +9,13 @@ $ ./go.sh GAME_NAME
 
 ### Zero-shot transfer experiment
 To train RL policies on the generated environments, run
-# TODO
+TODO
 
 To train RL policies on the ``ground-truth'' PLE environments, run 
-`./rl_train.sh pong ppo gt --train_on_ple`
-
+```
+$ cd rl_training
+$ ./rl_train.sh pong ppo gt --train_on_ple
+```
 
 ### Miscalleneous
 To export video trajectory of a policy, run 
@@ -24,12 +26,14 @@ To export video trajectory of a policy, run
 refer to https://github.com/sunfanyunn/FactorSim/tree/master/LLM-POMDP
 
 ### Training RL policies
+Refer to [rl_training/rl_train.sh]
 
 To train RL policies on the ``ground-truth'' PLE environments, run 
 `./rl_train.sh pong ppo gt --train_on_ple`
 
-To train RL policies on the generated environments, run
-`
+To train RL policies on the generated environments, run:
+TODO
+
 
 ## Acknowledgement
 - [PLE: A Reinforcement Learning Environment](https://pygame-learning-environment.readthedocs.io/en/latest/)
