@@ -9,8 +9,8 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 target_path = os.path.join(script_dir, "../../../")
 sys.path.append(target_path)
 from unittest_utils import JsonTestRunner
-
 os.environ["SDL_VIDEODRIVER"] = "dummy"
+
 
 if len(sys.argv) > 1:
     # Pop the last argument from sys.argv, which is the path to the game implementation
@@ -24,7 +24,7 @@ else:
     from mdp import Game
 
 
-class TestGame(unittest.TestCase):
+class TestMinesweeperGame(unittest.TestCase):
     def setUp(self):
         pygame.init()
         self.game = Game()

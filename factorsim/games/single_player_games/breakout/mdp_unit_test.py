@@ -6,6 +6,10 @@ import sys
 import os
 from unittest.mock import MagicMock
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+target_path = os.path.join(script_dir, "../../../")
+sys.path.append(target_path)
+from unittest_utils import JsonTestRunner
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 
 
@@ -20,58 +24,6 @@ if len(sys.argv) > 1:
     Game = game_module.Game
 else:
     from mdp import Game
-
-
-class JsonTestResult(unittest.TextTestResult):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.test_results = []
-
-    def addSuccess(self, test):
-        super().addSuccess(test)
-        test_name = test._testMethodName
-        test_number = getattr(test, "test_number", None)
-        self.test_results.append(
-            {"function_name": test_name, "test_number": test_number, "status": "OK"}
-        )
-
-    def addError(self, test, err):
-        super().addError(test, err)
-        test_name = test._testMethodName
-        test_number = getattr(test, "test_number", None)
-        self.test_results.append(
-            {
-                "function_name": test_name,
-                "test_number": test_number,
-                "message": str(err),
-                "status": "ERROR",
-            }
-        )
-
-    def addFailure(self, test, err):
-        super().addFailure(test, err)
-        test_name = test._testMethodName
-        test_number = getattr(test, "test_number", None)
-        self.test_results.append(
-            {
-                "function_name": test_name,
-                "test_number": test_number,
-                "message": str(err),
-                "status": "FAIL",
-            }
-        )
-
-
-class JsonTestRunner(unittest.TextTestRunner):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.resultclass = JsonTestResult
-
-    def run(self, test):
-        result = super().run(test)
-        with open("test_results.json", "w") as f:
-            json.dump(result.test_results, f, indent=4)
-        return result
 
 
 class TestBreakoutGame(unittest.TestCase):
@@ -148,4 +100,4 @@ class TestBreakoutGame(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main(testRunner=JsonTestRunner(verbosity=2))
+    unittest.main(testRunner=JsonTestRunner(game_name="breakout", verbosity=2))
