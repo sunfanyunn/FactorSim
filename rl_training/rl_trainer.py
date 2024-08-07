@@ -178,7 +178,7 @@ if __name__ == "__main__":
     #      configs.num_gpus = 0
 
     ### I changed the _temp_dir but you likely don't have to do so
-    # _temp_dir='/data2/sunfanyun/tmp',
+    # _temp_dir='',
     ray.init(local_mode=args.local, ignore_reinit_error=True)
     ### for some reason, I have to set the following line, otherwiseI will get "URI has empty scheme"
     # exp_config['dir'] = None

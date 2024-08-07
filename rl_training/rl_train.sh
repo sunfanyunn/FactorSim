@@ -17,5 +17,6 @@ echo "logging at $results_dir"
 wandb_run_name=torch-$env_name-$version-$exp_id
 
 #python randomize_env.py $env_name $version
-TMPDIR=/data2/sunfanyun/tmp python rl_trainer.py --env_name $env_name --algo $algo --exp_id $exp_id --results_dir $results_dir  --wandb --num_gpus 1 --num_workers 40 "${@:4}"
-TMPDIR=/data2/sunfanyun/tmp python rl_eval.py    --env_name $env_name --algo $algo --exp_id $exp_id --results_dir $results_dir --checkpoint $results_dir/$wandb_run_name/best_result.pkl "${@:4}"
+TMPDIR=
+python rl_trainer.py --env_name $env_name --algo $algo --exp_id $exp_id --results_dir $results_dir  --wandb --num_gpus 1 --num_workers 40 "${@:4}"
+python rl_eval.py    --env_name $env_name --algo $algo --exp_id $exp_id --results_dir $results_dir --checkpoint $results_dir/$wandb_run_name/best_result.pkl "${@:4}"

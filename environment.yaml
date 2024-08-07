@@ -218,4 +218,3 @@ dependencies:
     - werkzeug==3.0.1
     - wrapt==1.14.1
     - zipp==3.8.1
-prefix: /data2/sunfanyun/miniconda3
