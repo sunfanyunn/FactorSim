@@ -1,4 +1,17 @@
-# FactorSim
+# FactorSim: 
+
+**NeurIPS 2024**
+
+[![Website](doc/badges/badge-website.svg)](https://cs.stanford.edu/~sunfanyun/factorsim/)
+[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2312.02145)
+
+[Fan-Yun Sun](https://sunfanyun.com/),
+[Harini S I](https://harini-si.github.io/),
+[Alex Zook](https://scholar.google.com/citations?user=2nA9bVMAAAAJ&hl=en),
+[Jonathan Tremblay](https://scholar.google.com/citations?hl=en&user=zeS5UJEAAAAJ),
+[Logan Cross](https://scholar.google.com/citations?hl=en&user=sTCyNPIAAAAJ),
+[Jiajun Wu](https://scholar.google.com/citations?user=2efgcS0AAAAJ&hl=en),
+[Nick Haber](https://scholar.google.com/citations?user=euNCoVYAAAAJ&hl=en)
 
 ### Simulation Generation
 Refer to the README under the directory `factorsim`.
@@ -8,9 +21,9 @@ $ ./go.sh GAME_NAME
 ```
 
 ### Zero-shot transfer experiments 
-Refer to [rl_training/rl_train.sh]
+Refer to [rl_training/rl_train.sh](rl_training/rl_train.sh)
 
-To train RL policies on the ``ground-truth'' PLE environments, run 
+To train RL policies on the PLE environments ("ground-truth" environments used in the paper), run 
 ```
 $ cd rl_training
 $ ./rl_train.sh pong ppo gt --train_on_ple
