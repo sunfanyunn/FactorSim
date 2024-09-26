@@ -13,6 +13,10 @@
 [Jiajun Wu](https://scholar.google.com/citations?user=2efgcS0AAAAJ&hl=en),
 [Nick Haber](https://scholar.google.com/citations?user=euNCoVYAAAAJ&hl=en)
 
+
+![teaser](doc/teaser.gif)
+
+
 ### Simulation Generation
 Refer to the README under the directory `factorsim`.
 ```
