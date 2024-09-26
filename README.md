@@ -1,9 +1,9 @@
-# FactorSim: 
+# FactorSim: Generative Simulation via Factorized Representation
 
 **NeurIPS 2024**
 
 [![Website](doc/badges/badge-website.svg)](https://cs.stanford.edu/~sunfanyun/factorsim/)
-[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2312.02145)
+[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)]()
 
 [Fan-Yun Sun](https://sunfanyun.com/),
 [Harini S I](https://harini-si.github.io/),
@@ -25,7 +25,7 @@ $ ./go.sh GAME_NAME
 ```
 
 ### Zero-shot transfer experiments 
-Refer to [rl_training/rl_train.sh](rl_training/rl_train.sh)
+Refer to [rl_training/rl_train.sh](rl_training/rl_train.sh).
 
 To train RL policies on the PLE environments ("ground-truth" environments used in the paper), run 
 ```
@@ -33,13 +33,12 @@ $ cd rl_training
 $ ./rl_train.sh pong ppo gt --train_on_ple
 ```
 
-To train RL policies on the generated environments, run:
-TODO
-
 ### Miscellaneous
-To export video trajectory of a policy, run 
-`python -m utils.export_video pong`
-
+To export video trajectory of a policy 
+````
+$ cd rl_training
+$ python -m utils.export_video pong
+````
 
 ## Acknowledgement
 - [PLE: A Reinforcement Learning Environment](https://pygame-learning-environment.readthedocs.io/en/latest/)
